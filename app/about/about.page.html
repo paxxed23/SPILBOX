@@ -1,0 +1,32 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-title>SPILBOX</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <form #form="ngForm" novalidate>
+        <ion-item>
+            <ion-label>Medicamento:</ion-label>
+            <ion-input type="text" required [(ngModel)]="alarma.medicamento" ngControl="title" name="medicamento"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label>Hora:</ion-label>
+            <ion-datetime displayFormat="HH:mm" [(ngModel)]="alarma.hora" name="hora"></ion-datetime>
+        </ion-item>
+        <ion-item>
+            <ion-label>Cada cuantas horas?: </ion-label>
+            <ion-datetime displayFormat="HH:mm" [(ngModel)]="alarma.intervalo" name="intervalo"></ion-datetime>
+        </ion-item>
+        <ion-item>
+            <ion-label>Descripción:</ion-label>
+            <ion-textarea [(ngModel)]="alarma.descripcion" ngControl="descripcion" name="descripcion"></ion-textarea>
+        </ion-item>
+        <ion-item>
+            <ion-label>Alarma: </ion-label>
+            <ion-datetime displayFormat="H" [(ngModel)]="opcion" name="opcion"></ion-datetime>
+        </ion-item>
+    </form>
+</ion-content>
+
+<button ion-button class="button1 bouncy" (click)="agregaralarm()">Agregar alarma</button>
